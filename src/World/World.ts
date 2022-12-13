@@ -9,5 +9,10 @@ export default class World {
 
     // Setup
     this.sizes = new Sizes();
+    this.sizes.on("resize", this.handleResize.bind(this));
+  }
+
+  handleResize() {
+    console.log("resize");
   }
 }
