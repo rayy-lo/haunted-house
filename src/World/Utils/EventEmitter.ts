@@ -13,7 +13,7 @@ export default class EventEmitter {
   off(eventName, listener) {
     this.target.removeEventListener(eventName, listener);
   }
-  emit(eventName, detail) {
+  emit(eventName, detail?) {
     this.target.dispatchEvent(
       new CustomEvent(eventName, { detail, cancelable: true })
     );
