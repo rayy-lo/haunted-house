@@ -3,8 +3,8 @@ import { OrbitControls } from "../../../node_modules/three/examples/jsm/controls
 import World from "../World";
 
 export class WorldCamera {
-  private camera: PerspectiveCamera;
-  private controls: OrbitControls;
+  camera: PerspectiveCamera;
+  controls: OrbitControls;
   private sizes;
   private canvas;
   private scene;

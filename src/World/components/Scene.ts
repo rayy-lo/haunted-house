@@ -2,8 +2,8 @@ import { Scene } from "three";
 
 export default class WorldScene {
   // Define a property to store the objects in the scene
-  private objects: Array<any>;
-  private scene: Scene;
+  objects: Array<any>;
+  scene: Scene;
 
   constructor() {
     // Initialize the objects property
