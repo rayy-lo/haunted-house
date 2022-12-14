@@ -2,6 +2,7 @@ import WorldScene from "./components/Scene";
 import { Sizes } from "./Utils/Sizes";
 import { WorldCamera } from "./components/Camera";
 import Renderer from "./components/Renderer";
+import Loop from "./Utils/Loop";
 export default class World {
   public static instance: World;
 
@@ -10,6 +11,7 @@ export default class World {
   scene: WorldScene;
   sizes: Sizes;
   renderer: Renderer;
+  loop: Loop;
 
   constructor(canvas: HTMLCanvasElement) {
     World.instance = this;
@@ -21,8 +23,10 @@ export default class World {
     this.sizes = new Sizes();
     this.camera = new WorldCamera();
     this.renderer = new Renderer();
+    this.loop = new Loop();
 
     this.sizes.on("resize", this.handleResize.bind(this));
+    this.loop.on("tick", this.handleUpdate.bind(this));
   }
 
   public static getInstance() {
@@ -36,5 +40,9 @@ export default class World {
   handleResize() {
     this.camera.resize();
     this.renderer.resize();
+  }
+
+  handleUpdate() {
+
   }
 }
