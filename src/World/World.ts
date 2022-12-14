@@ -35,5 +35,6 @@ export default class World {
 
   handleResize() {
     this.camera.resize();
+    this.renderer.resize();
   }
 }

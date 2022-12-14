@@ -12,8 +12,16 @@ export default class Renderer {
     this.world = World.getInstance();
     this.sizes = this.world.sizes;
     this.canvas = this.world.canvas;
-    this.scene = this.world.scene;
-    this.camera = this.world.camera;
+    this.scene = this.world.scene.scene;
+    this.camera = this.world.camera.camera;
+
     this.renderer = new WebGLRenderer({ canvas: this.canvas, antialias: true });
+    this.renderer.setSize(this.sizes.width, this.sizes.height);
+    this.renderer.render(this.scene, this.camera);
+  }
+
+  resize() {
+    this.renderer.setSize(this.sizes.width, this.sizes.height);
+    this.renderer.setPixelRatio(this.sizes.pixelRatio);
   }
 }
