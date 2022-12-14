@@ -1,5 +1,6 @@
 import { PerspectiveCamera } from "three";
 import { OrbitControls } from "../../../node_modules/three/examples/jsm/controls/OrbitControls.js";
+import World from "../World";
 
 export class WorldCamera {
   private camera: PerspectiveCamera;
@@ -7,11 +8,17 @@ export class WorldCamera {
   private sizes;
   private canvas;
   private scene;
+  private world;
 
-  constructor(sizes, canvas, scene) {
-    this.sizes = sizes;
-    this.canvas = canvas;
-    this.scene = scene;
+  constructor() {
+    this.world = World.getInstance();
+    this.sizes = this.world.sizes;
+    this.canvas = this.world.canvas;
+    this.scene = this.world.scene;
+    this.camera = new PerspectiveCamera(
+      35,
+      this.sizes.width / this.sizes.height
+    );
 
     this.setInstance();
     this.setOrbitControls();
@@ -20,10 +27,6 @@ export class WorldCamera {
   update() {}
 
   setInstance() {
-    this.camera = new PerspectiveCamera(
-      35,
-      this.sizes.width / this.sizes.height
-    );
     this.camera.position.set(0, 0, 10);
     this.scene.add(this.camera);
   }
