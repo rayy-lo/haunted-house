@@ -20,6 +20,10 @@ export default class Renderer {
     this.renderer.render(this.scene, this.camera);
   }
 
+  update() {
+    this.renderer.render(this.scene, this.camera);
+  }
+
   resize() {
     this.renderer.setSize(this.sizes.width, this.sizes.height);
     this.renderer.setPixelRatio(this.sizes.pixelRatio);

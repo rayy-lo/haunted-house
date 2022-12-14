@@ -3,6 +3,7 @@ import { Sizes } from "./Utils/Sizes";
 import { WorldCamera } from "./components/Camera";
 import Renderer from "./components/Renderer";
 import Loop from "./Utils/Loop";
+import House from "./components/House/House";
 export default class World {
   public static instance: World;
 
@@ -27,6 +28,8 @@ export default class World {
 
     this.sizes.on("resize", this.handleResize.bind(this));
     this.loop.on("tick", this.handleUpdate.bind(this));
+
+    this.setupScene();
   }
 
   public static getInstance() {
@@ -37,12 +40,17 @@ export default class World {
     return World.instance;
   }
 
+  setupScene() {
+    this.house = new House();
+  }
+
   handleResize() {
     this.camera.resize();
     this.renderer.resize();
   }
 
   handleUpdate() {
-
+    this.camera.update();
+    this.renderer.update();
   }
 }

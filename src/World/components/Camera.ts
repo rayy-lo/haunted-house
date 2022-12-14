@@ -24,7 +24,9 @@ export class WorldCamera {
     this.setOrbitControls();
   }
 
-  update() {}
+  update() {
+    this.controls.update();
+  }
 
   setInstance() {
     this.camera.position.set(0, 0, 10);
