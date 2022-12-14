@@ -1,8 +1,8 @@
 import EventEmitter from "./EventEmitter";
 export class Sizes extends EventEmitter {
-  private width: number;
-  private height: number;
-  private pixelRatio: number;
+  width: number;
+  height: number;
+  pixelRatio: number;
 
   constructor() {
     super();
