@@ -1,18 +1,20 @@
 import { Scene } from "three";
 
-export default class WorldScene extends Scene {
+export default class WorldScene {
   // Define a property to store the objects in the scene
-  objects: Array<any>;
+  private objects: Array<any>;
+  private scene: Scene;
 
   constructor() {
-    super();
     // Initialize the objects property
     this.objects = [];
+    this.scene = new Scene();
   }
 
-  addUpdatableObject(object: any) {
+  add(object: any) {
     // Add the object to the scene
     this.objects.push(object);
+    this.scene.add(object);
   }
 
   update() {
