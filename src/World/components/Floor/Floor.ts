@@ -7,7 +7,7 @@ export default class Floor {
   constructor() {
     this.world = World.getInstance();
 
-    const planeGeometry = new PlaneGeometry(10, 10);
+    const planeGeometry = new PlaneGeometry(20, 20);
     const planeMaterial = new MeshStandardMaterial({ color: "#d0e9bb" });
     const floor = new Mesh(planeGeometry, planeMaterial);
     floor.rotation.x = Math.PI * -0.5;
