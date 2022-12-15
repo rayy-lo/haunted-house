@@ -18,6 +18,8 @@ export default class Renderer {
     this.renderer = new WebGLRenderer({ canvas: this.canvas, antialias: true });
     this.renderer.setSize(this.sizes.width, this.sizes.height);
     this.renderer.render(this.scene, this.camera);
+
+    this.renderer.setClearColor("#262837");
   }
 
   update() {

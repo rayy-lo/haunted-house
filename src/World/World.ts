@@ -6,6 +6,7 @@ import Loop from "./Utils/Loop";
 import House from "./components/House/House";
 import Floor from "./components/Floor/Floor";
 import Light from "./components/Light/Light";
+import { Fog } from "three";
 export default class World {
   public static instance: World;
 
@@ -46,6 +47,8 @@ export default class World {
     const house = new House();
     const floor = new Floor();
     const light = new Light();
+    const fog = new Fog("#262837", 10, 20);
+    this.scene.scene.fog = fog;
   }
 
   handleResize() {

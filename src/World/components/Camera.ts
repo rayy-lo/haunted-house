@@ -29,7 +29,7 @@ export class WorldCamera {
   }
 
   setInstance() {
-    this.camera.position.set(5, 10, 20);
+    this.camera.position.set(5, 10, 15);
     this.scene.add(this.camera);
   }
 
