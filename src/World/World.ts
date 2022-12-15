@@ -47,7 +47,7 @@ export default class World {
     const house = new House();
     const floor = new Floor();
     const light = new Light();
-    const fog = new Fog("#262837", 10, 20);
+    const fog = new Fog("#484c68", 5, 20);
     this.scene.scene.fog = fog;
   }
 
