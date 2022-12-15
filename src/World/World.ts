@@ -7,6 +7,7 @@ import House from "./components/House/House";
 import Floor from "./components/Floor/Floor";
 import Light from "./components/Light/Light";
 import { Fog } from "three";
+import Graves from "./components/Graves/Graves";
 export default class World {
   public static instance: World;
 
@@ -45,6 +46,7 @@ export default class World {
 
   setupScene() {
     const house = new House();
+    const graves = new Graves();
     const floor = new Floor();
     const light = new Light();
     const fog = new Fog("#484c68", 5, 20);
