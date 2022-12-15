@@ -4,6 +4,7 @@ import { WorldCamera } from "./components/Camera";
 import Renderer from "./components/Renderer";
 import Loop from "./Utils/Loop";
 import House from "./components/House/House";
+import Floor from "./components/Floor/Floor";
 export default class World {
   public static instance: World;
 
@@ -41,7 +42,8 @@ export default class World {
   }
 
   setupScene() {
-    this.house = new House();
+    const house = new House();
+    const floor = new Floor();
   }
 
   handleResize() {
