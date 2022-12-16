@@ -49,7 +49,7 @@ export default class World {
     const graves = new Graves();
     const floor = new Floor();
     const light = new Light();
-    const fog = new Fog("#484c68", 5, 20);
+    const fog = new Fog("#484c68", 5, 25);
     this.scene.scene.fog = fog;
   }
 

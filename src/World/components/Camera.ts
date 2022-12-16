@@ -16,7 +16,7 @@ export class WorldCamera {
     this.canvas = this.world.canvas;
     this.scene = this.world.scene;
     this.camera = new PerspectiveCamera(
-      35,
+      45,
       this.sizes.width / this.sizes.height
     );
 
@@ -29,7 +29,7 @@ export class WorldCamera {
   }
 
   setInstance() {
-    this.camera.position.set(5, 10, 15);
+    this.camera.position.set(6, 5, 14);
     this.scene.add(this.camera);
   }
 
