@@ -2,7 +2,7 @@ import { PerspectiveCamera } from "three";
 import { OrbitControls } from "../../../node_modules/three/examples/jsm/controls/OrbitControls.js";
 import World from "../World";
 
-export class WorldCamera {
+export default class WorldCamera {
   camera: PerspectiveCamera;
   controls: OrbitControls;
   private sizes;

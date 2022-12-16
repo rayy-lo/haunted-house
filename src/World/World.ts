@@ -1,13 +1,13 @@
 import WorldScene from "./components/Scene";
-import { Sizes } from "./Utils/Sizes";
-import { WorldCamera } from "./components/Camera";
+import Sizes from "./Utils/Sizes";
+import WorldCamera from "./components/Camera";
 import Renderer from "./components/Renderer";
 import Loop from "./Utils/Loop";
 import House from "./components/House/House";
 import Floor from "./components/Floor/Floor";
 import Light from "./components/Light/Light";
-import { Fog } from "three";
 import Graves from "./components/Graves/Graves";
+import { Fog } from "three";
 export default class World {
   public static instance: World;
 
