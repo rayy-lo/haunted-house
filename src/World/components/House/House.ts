@@ -19,9 +19,18 @@ export default class House {
     this.house = new Group();
 
     // Walls
+    const {
+      brickColorTexture,
+      brickAoTexture,
+      brickNormalTexture,
+      brickRoughnessTexture,
+    } = this.world.loader.items;
     const cubeGeometry = new BoxGeometry(4, 2, 4);
     const cubeMaterial = new MeshStandardMaterial({
-      color: "#ac8e82",
+      map: brickColorTexture,
+      aoMap: brickAoTexture,
+      normalMap: brickNormalTexture,
+      roughnessMap: brickRoughnessTexture,
     });
     const cube = new Mesh(cubeGeometry, cubeMaterial);
     this.house.add(cube);
@@ -35,10 +44,29 @@ export default class House {
     this.house.add(roof);
 
     // Door
-    const planeGeometry = new PlaneGeometry(2, 1.5);
-    const planeMaterial = new MeshStandardMaterial({ color: "#b35f45" });
+    const {
+      doorColorTexture,
+      doorAlphaTexture,
+      doorAoTexture,
+      doorHeightTexture,
+      doorMetalTexture,
+      doorRoughTexture,
+      doorNormalTexture,
+    } = this.world.loader.items;
+    const planeGeometry = new PlaneGeometry(2, 2, 100, 100);
+    const planeMaterial = new MeshStandardMaterial({
+      map: doorColorTexture,
+      alphaMap: doorAlphaTexture,
+      transparent: true,
+      aoMap: doorAoTexture,
+      metalnessMap: doorMetalTexture,
+      roughnessMap: doorRoughTexture,
+      normalMap: doorNormalTexture,
+      displacementMap: doorHeightTexture,
+      displacementScale: 0.1,
+    });
     const door = new Mesh(planeGeometry, planeMaterial);
-    door.position.set(0, -0.25, 2.01);
+    door.position.set(0, 0, 2.01);
     this.house.add(door);
 
     //Bushes
