@@ -10,9 +10,9 @@ export default class Graves {
     const cube = new BoxGeometry(0.75, 1, 0.35);
     const material = new MeshStandardMaterial({ color: "#b2b6b1" });
 
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 40; i++) {
       const angle = Math.random() * Math.PI * 2;
-      const radius = 2 + Math.random() * 8;
+      const radius = 5 + Math.random() * 4;
 
       const x = Math.cos(angle) * radius;
       const z = Math.sin(angle) * radius;
