@@ -12,8 +12,8 @@ export default class Loop extends EventEmitter {
     window.requestAnimationFrame(this.tick.bind(this));
   }
 
-  tick() {
-    this.emit("tick");
+  tick(timestamp) {
+    this.emit("tick", { timestamp });
     window.requestAnimationFrame(this.tick.bind(this));
   }
 }

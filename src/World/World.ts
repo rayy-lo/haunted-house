@@ -63,9 +63,9 @@ export default class World {
     this.renderer.resize();
   }
 
-  handleUpdate() {
+  handleUpdate(e) {
     this.camera.update();
     this.renderer.update();
-    this.ghosts.update();
+    this.ghosts.update(e.detail.timestamp);
   }
 }
