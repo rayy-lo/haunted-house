@@ -1,4 +1,9 @@
-import { Mesh, MeshStandardMaterial, PlaneGeometry } from "three";
+import {
+  Float32BufferAttribute,
+  Mesh,
+  MeshStandardMaterial,
+  PlaneGeometry,
+} from "three";
 import World from "../../World";
 
 export default class Floor {
@@ -23,6 +28,11 @@ export default class Floor {
     const floor = new Mesh(planeGeometry, planeMaterial);
     floor.rotation.x = Math.PI * -0.5;
     floor.position.set(0, -1, 0);
+
+    floor.geometry.setAttribute(
+      "uv2",
+      new Float32BufferAttribute(floor.geometry.attributes.uv.array, 2)
+    );
 
     this.world.scene.add(floor);
   }

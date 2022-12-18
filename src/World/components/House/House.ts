@@ -7,6 +7,7 @@ import {
   PlaneGeometry,
   SphereGeometry,
   PointLight,
+  Float32BufferAttribute,
 } from "three";
 import World from "../../World";
 
@@ -34,6 +35,11 @@ export default class House {
     });
     const cube = new Mesh(cubeGeometry, cubeMaterial);
     this.house.add(cube);
+
+    cube.geometry.setAttribute(
+      "uv2",
+      new Float32BufferAttribute(cube.geometry.attributes.uv.array, 2)
+    );
 
     // Roof
     const coneGeometry = new ConeGeometry(3.5, 2, 4);
@@ -68,6 +74,11 @@ export default class House {
     const door = new Mesh(planeGeometry, planeMaterial);
     door.position.set(0, 0, 2.01);
     this.house.add(door);
+
+    door.geometry.setAttribute(
+      "uv2",
+      new Float32BufferAttribute(door.geometry.attributes.uv.array, 2)
+    );
 
     //Bushes
     const sphereGeometry = new SphereGeometry(0.5);
