@@ -9,6 +9,7 @@ import Floor from "./components/Floor/Floor";
 import Light from "./components/Light/Light";
 import Graves from "./components/Graves/Graves";
 import { Fog } from "three";
+import Ghost from "./components/Ghost/Ghost";
 export default class World {
   public static instance: World;
 
@@ -19,6 +20,7 @@ export default class World {
   renderer: Renderer;
   loop: Loop;
   loader: Loader;
+  ghosts: Ghost;
 
   constructor(canvas: HTMLCanvasElement) {
     World.instance = this;
@@ -52,6 +54,7 @@ export default class World {
     const floor = new Floor();
     const light = new Light();
     const fog = new Fog("#484c68", 5, 25);
+    this.ghosts = new Ghost();
     this.scene.scene.fog = fog;
   }
 
@@ -63,5 +66,6 @@ export default class World {
   handleUpdate() {
     this.camera.update();
     this.renderer.update();
+    this.ghosts.update();
   }
 }
