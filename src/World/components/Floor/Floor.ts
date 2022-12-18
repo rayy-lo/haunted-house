@@ -3,6 +3,7 @@ import {
   Mesh,
   MeshStandardMaterial,
   PlaneGeometry,
+  RepeatWrapping,
 } from "three";
 import World from "../../World";
 
@@ -18,6 +19,22 @@ export default class Floor {
       grassNormalTexture,
       grassRoughTexture,
     } = this.world.loader.items;
+
+    grassColorTexture.repeat.set(8, 8);
+    grassAoTexture.repeat.set(8, 8);
+    grassNormalTexture.repeat.set(8, 8);
+    grassRoughTexture.repeat.set(8, 8);
+
+    grassColorTexture.wrapS = RepeatWrapping;
+    grassAoTexture.wrapS = RepeatWrapping;
+    grassNormalTexture.wrapS = RepeatWrapping;
+    grassAoTexture.wrapS = RepeatWrapping;
+
+    grassColorTexture.wrapT = RepeatWrapping;
+    grassAoTexture.wrapT = RepeatWrapping;
+    grassNormalTexture.wrapT = RepeatWrapping;
+    grassAoTexture.wrapT = RepeatWrapping;
+
     const planeGeometry = new PlaneGeometry(20, 20);
     const planeMaterial = new MeshStandardMaterial({
       aoMap: grassAoTexture,
