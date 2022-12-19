@@ -36,8 +36,10 @@ export default class World {
     this.loader = new Loader();
 
     this.sizes.on("resize", this.handleResize.bind(this));
-    this.loop.on("tick", this.handleUpdate.bind(this));
-    this.loader.on("ready", () => this.setupScene());
+    this.loader.on("ready", () => {
+      this.setupScene();
+      this.loop.on("tick", this.handleUpdate.bind(this));
+    });
   }
 
   public static getInstance() {
