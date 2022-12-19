@@ -1,66 +1,84 @@
 import { TextureLoader } from "three";
 import EventEmitter from "./EventEmitter";
 
+import brickColorTexture from "../../../assets/textures/bricks/color.jpg";
+import brickNormalTexture from "../../../assets/textures/bricks/normal.jpg";
+import brickAoTexture from "../../../assets/textures/bricks/ambientOcclusion.jpg";
+import brickRoughnessTexture from "../../../assets/textures/bricks/roughness.jpg";
+
+import doorAlphaTexture from "../../../assets/textures/door/alpha.jpg";
+import doorAoTexture from "../../../assets/textures/door/ambientOcclusion.jpg";
+import doorColorTexture from "../../../assets/textures/door/color.jpg";
+import doorHeightTexture from "../../../assets/textures/door/height.jpg";
+import doorMetalTexture from "../../../assets/textures/door/metalness.jpg";
+import doorNormalTexture from "../../../assets/textures/door/normal.jpg";
+import doorRoughTexture from "../../../assets/textures/door/roughness.jpg";
+
+import grassColorTexture from "../../../assets/textures/grass/color.jpg";
+import grassAoTexture from "../../../assets/textures/grass/ambientOcclusion.jpg";
+import grassNormalTexture from "../../../assets/textures/grass/normal.jpg";
+import grassRoughnessTexture from "../../../assets/textures/grass/roughness.jpg";
+
 const sources = [
   {
     name: "brickColorTexture",
-    path: "../../assets/textures/bricks/color.jpg",
+    path: brickColorTexture,
   },
   {
     name: "brickNormalTexture",
-    path: "../../assets/textures/bricks/normal.jpg",
+    path: brickNormalTexture,
   },
   {
     name: "brickRoughnessTexture",
-    path: "../../assets/textures/bricks/roughness.jpg",
+    path: brickRoughnessTexture,
   },
   {
     name: "brickAoTexture",
-    path: "../../assets/textures/bricks/ambientOcclusion.jpg",
+    path: brickAoTexture,
   },
   {
     name: "doorAlphaTexture",
-    path: "../../assets/textures/door/alpha.jpg",
+    path: doorAlphaTexture,
   },
   {
     name: "doorColorTexture",
-    path: "../../assets/textures/door/color.jpg",
+    path: doorColorTexture,
   },
   {
     name: "doorAoTexture",
-    path: "../../assets/textures/door/ambientOcclusion.jpg",
+    path: doorAoTexture,
   },
   {
     name: "doorHeightTexture",
-    path: "../../assets/textures/door/height.jpg",
+    path: doorHeightTexture,
   },
   {
     name: "doorMetalTexture",
-    path: "../../assets/textures/door/metalness.jpg",
+    path: doorMetalTexture,
   },
   {
     name: "doorNormalTexture",
-    path: "../../assets/textures/door/normal.jpg",
+    path: doorNormalTexture,
   },
   {
     name: "doorRoughTexture",
-    path: "../../assets/textures/door/roughness.jpg",
+    path: doorRoughTexture,
   },
   {
     name: "grassAoTexture",
-    path: "../../assets/textures/grass/ambientOcclusion.jpg",
+    path: grassAoTexture,
   },
   {
     name: "grassColorTexture",
-    path: "../../assets/textures/grass/color.jpg",
+    path: grassColorTexture,
   },
   {
     name: "grassNormalTexture",
-    path: "../../assets/textures/grass/normal.jpg",
+    path: grassNormalTexture,
   },
   {
     name: "grassRoughTexture",
-    path: "../../assets/textures/grass/roughness.jpg",
+    path: grassRoughnessTexture,
   },
 ];
 
