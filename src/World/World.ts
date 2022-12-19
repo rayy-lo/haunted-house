@@ -20,7 +20,7 @@ export default class World {
   renderer: Renderer;
   loop: Loop;
   loader: Loader;
-  ghosts: Ghost;
+  ghosts!: Ghost;
 
   constructor(canvas: HTMLCanvasElement) {
     World.instance = this;
