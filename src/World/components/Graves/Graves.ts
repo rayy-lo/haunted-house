@@ -19,6 +19,7 @@ export default class Graves {
 
       const grave = new Mesh(cube, material);
       grave.position.set(x, -0.75, z);
+      grave.castShadow = true;
 
       grave.rotation.z = (Math.random() - 0.5) * 0.4;
       grave.rotation.y = (Math.random() - 0.5) * 0.4;

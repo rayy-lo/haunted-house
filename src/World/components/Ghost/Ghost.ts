@@ -11,12 +11,15 @@ export default class Ghost {
     this.world = World.getInstance();
 
     this.ghost1 = new PointLight("#ff00ff", 2, 3);
+    this.ghost1.castShadow = true;
     this.world.scene.add(this.ghost1);
 
     this.ghost2 = new PointLight("#00ffff", 2, 3);
+    this.ghost2.castShadow = true;
     this.world.scene.add(this.ghost2);
 
     this.ghost3 = new PointLight("#ffff00", 2, 3);
+    this.ghost3.castShadow = true;
     this.world.scene.add(this.ghost3);
   }
 

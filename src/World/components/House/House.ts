@@ -41,6 +41,8 @@ export default class House {
       new Float32BufferAttribute(cube.geometry.attributes.uv.array, 2)
     );
 
+    cube.castShadow = true;
+
     // Roof
     const coneGeometry = new ConeGeometry(3.5, 2, 4);
     const coneMaterial = new MeshStandardMaterial({ color: "#b35f45" });
@@ -85,18 +87,20 @@ export default class House {
     const sphereMaterial = new MeshStandardMaterial({ color: "#89c854" });
     const bush = new Mesh(sphereGeometry, sphereMaterial);
     bush.position.set(0.75, -0.75, 2);
-
+    bush.castShadow = true;
     this.house.add(bush);
 
     const bush2 = new Mesh(sphereGeometry, sphereMaterial);
     bush2.scale.set(0.5, 0.5, 0.5);
     bush2.position.set(1.25, -1, 2);
+    bush2.castShadow = true;
     this.house.add(bush2);
 
     //Doorlight
-    const doorLight = new PointLight("#ff7d46", 1);
+    const doorLight = new PointLight("#ff7d46", 1, 7);
     doorLight.position.set(0, 1, 2.5);
     this.house.add(doorLight);
+    doorLight.castShadow = true;
 
     this.world.scene.add(this.house);
   }

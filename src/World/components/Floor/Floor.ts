@@ -46,6 +46,8 @@ export default class Floor {
     floor.rotation.x = Math.PI * -0.5;
     floor.position.set(0, -1, 0);
 
+    floor.receiveShadow = true;
+
     floor.geometry.setAttribute(
       "uv2",
       new Float32BufferAttribute(floor.geometry.attributes.uv.array, 2)
